@@ -30,13 +30,13 @@ app.post("/todo", async function(req, res) {
 })
 
 app.get("/todos", async function(req, res) {
-    // const todos = await todo.find({});
+    const todos = await todo.find({});
 
     res.json({
-        todos: []
-    })
+        todos: todos // Return fetched data
+    });
+});
 
-})
 
 app.put("/completed", async function(req, res) {
     const updatePayload = req.body;
@@ -59,4 +59,4 @@ app.put("/completed", async function(req, res) {
     })
 })
 
-app.listen(3000);
+app.listen(4000);
